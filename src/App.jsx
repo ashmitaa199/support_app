@@ -167,7 +167,7 @@ const App = () => {
         </span>
         <h2 className="text-xl font-bold mt-4 text-sky-700">What Makes Support App Different?</h2>
         <p className="text-lg text-gray-600 mt-2 font-semibold">
-          A product of <span className="text-sky-700 text-[20px]">NEXUSCARE TECH SERVICES PVT LTD</span>
+          A product of <span className="text-sky-700 text-[20px]">NEXUSCARE TECH SERVICES </span>
         </p>
       </div>
 
