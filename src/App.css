@@ -27,7 +27,7 @@
 
 .blog-card {
   width: 250px;
-  background: rgb(107, 134, 174);
+  background: #a6cee6;
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -48,7 +48,7 @@
 
 .subtitle {
   font-weight: 700;
-  color: rgb(240, 241, 244);
+  color: rgb(47, 97, 173);
   font-size: medium;
 }
 

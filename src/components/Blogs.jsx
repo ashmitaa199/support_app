@@ -36,7 +36,7 @@ const blogs = [
 const Blogs = () => {
   return (
     <div className="mt-9 ">
-    <span className="text-sky-700 p-2 border bg-sky-100 font-bold rounded-xl h-7">Some Of Our Blogs</span>
+    <span className="text-sky-700 p-2 border font-bold rounded-xl h-7">Some Of Our Blogs</span>
     <div className="blogs-container mt-2">
       
       <div className="blogs-slider">
@@ -44,9 +44,9 @@ const Blogs = () => {
           {blogs.concat(blogs).map((blog, index) => (
             <div key={index} className="blog-card">
               <img src={blog.image} alt={blog.title} />
-              <h3 className="font-medium">{blog.title}</h3>
+              <h3 className="font-medium text-gray-800">{blog.title}</h3>
               <p className="subtitle">{blog.subtitle}</p>
-              <p>{blog.description}</p>
+              <p className="text-gray-800">{blog.description}</p>
             </div>
           ))}
         </div>

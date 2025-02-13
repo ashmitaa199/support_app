@@ -25,11 +25,11 @@ const Footer = () => {
         </p>
         {/* Social Icons */}
         <div className="flex space-x-4 mt-5">
-          <a href="#" className="text-gray-400 hover:text-blue-400 text-lg"><FaFacebookF /></a>
-          <a href="#" className="text-gray-400 hover:text-blue-400 text-lg"><FaTwitter /></a>
-          <a href="#" className="text-gray-400 hover:text-pink-400 text-lg"><FaInstagram /></a>
-          <a href="#" className="text-gray-400 hover:text-blue-400 text-lg"><FaLinkedinIn /></a>
-          <a href="#" className="text-gray-400 hover:text-red-500 text-lg"><FaYoutube /></a>
+          <a href="#" className="text-gray-200 hover:text-blue-400 text-lg"><FaFacebookF /></a>
+          <a href="#" className="text-gray-200 hover:text-blue-400 text-lg"><FaTwitter /></a>
+          <a href="#" className="text-gray-200 hover:text-pink-400 text-lg"><FaInstagram /></a>
+          <a href="#" className="text-gray-200 hover:text-blue-400 text-lg"><FaLinkedinIn /></a>
+          <a href="#" className="text-gray-200 hover:text-red-500 text-lg"><FaYoutube /></a>
         </div>
       </div>
 

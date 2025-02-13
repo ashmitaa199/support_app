@@ -48,7 +48,7 @@ const App = () => {
           </div>
 
           {/* Navigation & Download */}
-          <div className="hidden md:flex items-center space-x-6 text-sky-700 font-normal">
+          <div className="hidden md:flex items-center space-x-6 text-sky-700 font-medium">
             <a href="#" className="hover:text-blue-500">Home</a>
             <a href="#" className="hover:text-blue-500">Experts</a>
             <a href="#" className="hover:text-blue-500">Blog</a>
@@ -125,16 +125,16 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-<section className="h-screen flex flex-col mt-7 md:mt-0 md:flex-row items-center justify-center md:justify-between bg-gradient-to-b from-sky-700 to-blue-200 text-white text-center md:text-left px-6 md:px-16 md:gap-2">
+<section className="h-screen flex flex-col mt-7 md:mt-0 md:flex-row items-center justify-center md:justify-between bg-gradient-to-b from-blue-50 to-[#9ccae5] text-white text-center md:text-left px-6 md:px-16 md:gap-2">
   {/* Left Side - Text Content */}
   <div className="w-full md:w-1/2">
-    <h1 className="text-3xl md:text-5xl font-bold">
-      Real <span className="text-black">{rotatingText}</span>
+    <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+      Real <span className="text-sky-700">{rotatingText}</span>
     </h1>
-    <p className="text-lg italic mt-4">
+    <p className="text-sm italic mt-4 text-sky-700">
       "Supporting Minds, Uplifting Hearts"
     </p>
-    <p className="mt-6 text-gray-200">
+    <p className="mt-6 text-gray-600">
       "Feeling down? Let’s turn those blues into a brighter hue—reach out and let’s talk.
       Sometimes, the best support starts with just one conversation."
     </p>
@@ -203,47 +203,49 @@ const App = () => {
       <Services/>
     </div>
 
-    <div class="container mx-auto px-6">
-        <h2 class="text-xl font-bold text-center mt-3">Pricing Details</h2>
-        <p class="text-center text-gray-500 mt-2 text-[12px]">Find the Right Option for You</p>
+    <div class="container mx-auto px-6 mt-5">
+        <h2 class="text-2xl font-bold text-center mt-3 text-sky-700">Pricing Details</h2>
+        <hr
+  class="my-1 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
+        <p class="text-center text-gray-500 mt-1 text-[10px]">Find the Right Option for You</p>
 
         <div class="grid md:grid-cols-3 gap-6 mt-10">
             
           
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky-700">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-[1.5px] border-sky-700">
                 <h3 class="text-xl font-bold">Chat</h3>
                 <p class="text-gray-700 text-lg font-medium mt-2">₹6/min</p>
                 <p class="text-gray-500 mt-4 text-[14px]">
                     Engage in meaningful text conversations with our qualified experts. Whether you need someone to talk to, seek advice, or simply vent, our chat service is available to provide you with the support you need.
                 </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-gray-800">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-[#82b5d4]">
                     Start Chat
                 </button>
             </div>
 
            
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky-700 relative">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-[1.5px] border-sky-700 relative">
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-700 text-white px-3 py-1 text-sm font-bold rounded-md">
                     Most Popular
                 </span>
                 <h3 class="text-xl font-bold">Audio Call</h3>
                 <p class="text-gray-700 text-lg font-medium mt-2">₹6/min</p>
-                <p class="text-gray-500 mt-4 text-[14px]">
+                <p class="text-gray-500 mt-4 text-[14px] ">
                     Connect with our experts through voice calls, allowing for a more personal and interactive experience. Discuss your concerns, share your thoughts, and receive real-time verbal feedback.
                 </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-gray-800">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-12 hover:bg-[#82b5d4]">
                     Start Call
                 </button>
             </div>
 
            
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky-700">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-[1.5px] border-sky-700">
                 <h3 class="text-xl font-bold">Video Call</h3>
                 <p class="text-gray-700 text-lg font-medium mt-2">₹18/min</p>
                 <p class="text-gray-500 mt-4 text-[14px]">
                     For those who prefer face-to-face communication, our video call service offers a more intimate and empathetic way to connect.
                 </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-gray-800">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-16 hover:bg-[#82b5d4]">
                     Start Video
                 </button>
             </div>
