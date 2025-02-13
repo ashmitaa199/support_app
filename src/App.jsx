@@ -1,7 +1,8 @@
 import './App.css'
-
 import { useState, useEffect, useRef } from "react";
 import Services from "./components/Services";
+import Blogs from './components/Blogs';
+import Footer from './components/Footer';
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "./assets/logo1.jpg";
 import support from "./assets/support_logo.jpg"
@@ -66,22 +67,14 @@ const App = () => {
               {/* Dropdown Options */}
               {downloadOpen && (
                 <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg ">
-                  <a
-                    href="https://play.google.com/store"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-700 hover:bg-blue-100 text-[14px]"
-                  >
-                    📱for Android
-                  </a>
-                  <a
-                    href="https://www.apple.com/app-store/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-700 hover:bg-blue-100 text-[14px]"
-                  >
-                    🍏 for iOS
-                  </a>
+                  <a href="#" className="block">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+                alt="Google Play" className="w-40" />
+            </a>
+            <a href="#" className="block">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                alt="App Store" className="w-40" />
+            </a>
                 </div>
               )}
             </div>
@@ -250,6 +243,13 @@ const App = () => {
             </div>
 
         </div>
+    </div>
+    <div>
+      <Blogs/>
+    </div>
+
+    <div>
+      <Footer/>
     </div>
   
 
