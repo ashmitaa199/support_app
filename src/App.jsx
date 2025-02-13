@@ -147,9 +147,9 @@ const App = () => {
 </section>
 
 
-      <section className="py-4 px-6">
+      <section className="py-6 px-6">
       <div className="text-center">
-        <span className="bg-white px-4 py-1 rounded-full shadow-sm text-sky-700 font-semibold">
+        <span className="bg-white px-4 py-1 rounded-full shadow-md text-sky-700 font-semibold">
           🔆 Features
         </span>
         <h2 className="text-sm font-bold mt-4 text-sky-700">What Makes Support App Different?</h2>

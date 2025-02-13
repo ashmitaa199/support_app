@@ -11,13 +11,13 @@ const services = [
     title: "Real Support",
     description:
       "The world is full of insecurities, and the only way to get over your insecurities is to talk about them. Support App can help you do exactly that. You can talk to a listener in private over chat, call or video call. Your identity is hidden, so you'll feel free to share your deepest, darkest secrets with someone who will make you feel better—and who might even be able to help you find a good partner!",
-    image: "https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Fspeak.png?alt=media&token=69eea055-5d06-476e-90dc-bc209229ee01",
+    image: "https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2F5114855.jpg?alt=media&token=e929e66a-3816-4751-9b0b-9d6a807b2fef",
   },
   {
     title: "Real Story",
     description:
       "We're the first and only app that allows you to find someone who has faced the same issue as you. We've made sure that all pictures and stories on our app are real, verified, and 100% true. So if you've ever felt that there was no one out there who could understand what you're going through, this is your chance! You can share your story freely and confidently, knowing that it's being heard by people who will support you.",
-    image: "https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Flock.png?alt=media&token=8bea5672-fdd3-4da7-a5af-01e00daec5be",
+    image: "https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2F7066574.jpg?alt=media&token=ea8fe126-0017-4f2b-9989-3cfd631ab67a",
   },
 ];
 
