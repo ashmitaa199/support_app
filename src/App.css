@@ -2,7 +2,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
- 
   text-align: center;
 }
 
@@ -28,7 +27,7 @@
 
 .blog-card {
   width: 250px;
-  background: #3c3a59;
+  background: rgb(107, 134, 174);
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -48,8 +47,9 @@
 }
 
 .subtitle {
-  font-weight: bold;
-  color: yellow;
+  font-weight: 700;
+  color: rgb(240, 241, 244);
+  font-size: medium;
 }
 
 .read-more {

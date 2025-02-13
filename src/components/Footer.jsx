@@ -1,12 +1,13 @@
 import React from "react";
+import logo from "../assets/logo1.jpg"
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-sky-700 text-gray-200">
       {/* Top Section */}
-      <div className="py-10 text-center px-5 border-8">
-        <div className="text-xl font-semibold max-w-4xl mx-auto leading-tight">
+      <div className="py-10 text-center px-5 ">
+        <div className="text-sm font-semibold max-w-4xl mx-auto leading-tight">
           Support App has helped thousands of people just like you get over their insecurities and find confidence—
           whether by helping them with their relationship problems or by simply making them feel better about themselves.
         </div>
@@ -14,9 +15,10 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="container mx-auto py-10 px-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
-      {/* Left Column - Logo & Description */}
+
       <div className="flex flex-col items-center md:items-start">
-        <h3 className="text-2xl font-semibold text-white">Support</h3>
+       
+        <img src={logo} className="w-[100px] h-12" />
         <p className="text-sm mt-4 text-gray-300">
           Navigate life's challenges with ease – whether it's a breakup, relationship hurdles, loneliness, anxiety, 
           depression, career, or family issues. Elevate your emotional well-being through the Support App.
@@ -60,7 +62,7 @@ const Footer = () => {
     </div>
 
       {/* Copyright Section */}
-      <div className="text-center text-gray-300 py-4 border-t border-gray-700 text-xs">
+      <div className="text-center text-gray-300 py-4 border-t border-b-gray-400 text-xs">
         © {new Date().getFullYear()} Support App. All rights reserved.
       </div>
     </footer>

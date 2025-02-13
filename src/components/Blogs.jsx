@@ -35,14 +35,16 @@ const blogs = [
 
 const Blogs = () => {
   return (
-    <div className="blogs-container ">
-      <h1 className="text-sky-700 bg-sky-100 font-bold mb-6 rounded-xl h-7">Some Of Our Blogs</h1>
+    <div className="mt-9 ">
+    <span className="text-sky-700 p-2 border bg-sky-100 font-bold rounded-xl h-7">Some Of Our Blogs</span>
+    <div className="blogs-container mt-2">
+      
       <div className="blogs-slider">
         <div className="blogs-track">
           {blogs.concat(blogs).map((blog, index) => (
             <div key={index} className="blog-card">
               <img src={blog.image} alt={blog.title} />
-              <h3>{blog.title}</h3>
+              <h3 className="font-medium">{blog.title}</h3>
               <p className="subtitle">{blog.subtitle}</p>
               <p>{blog.description}</p>
             </div>
@@ -51,7 +53,10 @@ const Blogs = () => {
       </div>
       <button className="bg-sky-700 mt-4 p-2 text-white rounded-sm text-[14px]">Read More</button>
     </div>
+    </div>
+  
   );
+
 };
 
 export default Blogs;

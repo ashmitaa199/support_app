@@ -33,12 +33,12 @@ const Services = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-sky-700 text-white rounded-xl p-6 shadow-lg transform transition duration-300 hover:scale-105"
+            className="bg-gray-100 text-gray-700 rounded-xl p-6 shadow-lg shadow-blue-300 transform transition duration-300 hover:scale-105"
           >
             <div className="flex justify-center mb-4 ">
               <img src={service.image} alt={service.title} className="w-14 h-14 rounded-full" />
             </div>
-            <h3 className="text-lg font-bold text-center">{service.title}</h3>
+            <h3 className="text-lg font-bold text-center text-gray-900">{service.title}</h3>
             <p className="text-[13px] mt-2 text-center">{service.description}</p>
           </div>
         ))}

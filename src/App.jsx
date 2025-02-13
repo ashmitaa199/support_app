@@ -173,7 +173,7 @@ const App = () => {
         </div>
 
         {/* Feature 2 */}
-        <div className="bg-white rounded-xl shadow-md shadow-sky-300 p-6 text-center">
+        <div className="bg-white rounded-xl shadow-md p-6 text-center">
         <div class="featured-img mb-3 w-[50px] mx-auto">
         <img class="avatar-sm"
                   src="https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Fspeak.png?alt=media&token=69eea055-5d06-476e-90dc-bc209229ee01"
@@ -204,7 +204,7 @@ const App = () => {
     </div>
 
     <div class="container mx-auto px-6">
-        <h2 class="text-xl font-bold text-center mt-1">Pricing Details</h2>
+        <h2 class="text-xl font-bold text-center mt-3">Pricing Details</h2>
         <p class="text-center text-gray-500 mt-2 text-[12px]">Find the Right Option for You</p>
 
         <div class="grid md:grid-cols-3 gap-6 mt-10">
@@ -216,7 +216,7 @@ const App = () => {
                 <p class="text-gray-500 mt-4 text-[14px]">
                     Engage in meaningful text conversations with our qualified experts. Whether you need someone to talk to, seek advice, or simply vent, our chat service is available to provide you with the support you need.
                 </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-gray-800">
                     Start Chat
                 </button>
             </div>
@@ -231,19 +231,19 @@ const App = () => {
                 <p class="text-gray-500 mt-4 text-[14px]">
                     Connect with our experts through voice calls, allowing for a more personal and interactive experience. Discuss your concerns, share your thoughts, and receive real-time verbal feedback.
                 </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-gray-800">
                     Start Call
                 </button>
             </div>
 
            
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky-700">
                 <h3 class="text-xl font-bold">Video Call</h3>
                 <p class="text-gray-700 text-lg font-medium mt-2">₹18/min</p>
                 <p class="text-gray-500 mt-4 text-[14px]">
                     For those who prefer face-to-face communication, our video call service offers a more intimate and empathetic way to connect.
                 </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-gray-800">
                     Start Video
                 </button>
             </div>
