@@ -34,7 +34,7 @@ const Footer = () => {
       {/* Middle Column - Important Links */}
       <div className="flex flex-col items-center md:items-start">
         <h4 className="text-xl font-semibold mb-4">Important Links</h4>
-        <ul className="text-gray-400 space-y-2">
+        <ul className="text-gray-300 text-sm space-y-2">
           {["FAQ's", "About Us", "Contact Us", "Refund Policy", "Privacy Policy", "Shipping Policy", "Cancellation Policy", "Terms and Conditions"].map((link, index) => (
             <li key={index}>
               <a href="#" className="hover:text-white">{link}</a>
