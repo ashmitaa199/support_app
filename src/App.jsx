@@ -82,7 +82,7 @@ const App = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)} className="text-blue-500">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-sky-700">
               {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
@@ -101,28 +101,22 @@ const App = () => {
             <div className="relative" ref={downloadRef}>
               <button
                 onClick={() => setDownloadOpen(!downloadOpen)}
-                className="border-[1.5px] px-4 py-1 rounded-md border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+                className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
               >
                 Download Now
               </button>
               {downloadOpen && (
                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
-                  <a
-                    href="https://play.google.com/store"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-700 hover:bg-blue-100"
-                  >
-                    📱 Download for Android
-                  </a>
-                  <a
-                    href="https://www.apple.com/app-store/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-700 hover:bg-blue-100"
-                  >
-                    🍏 Download for iOS
-                  </a>
+                  
+                  <a href="#" className="block">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+                alt="Google Play" className="w-40" />
+            </a>
+            <a href="#" className="block">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                alt="App Store" className="w-40" />
+            </a>
+               
                 </div>
               )}
             </div>
@@ -158,16 +152,20 @@ const App = () => {
         <span className="bg-white px-4 py-1 rounded-full shadow-sm text-sky-700 font-semibold">
           🔆 Features
         </span>
-        <h2 className="text-xl font-bold mt-4 text-sky-700">What Makes Support App Different?</h2>
-        <p className="text-lg text-gray-600 mt-2 font-semibold">
-          A product of <span className="text-sky-700 text-[20px]">NEXUSCARE TECH SERVICES </span>
+        <h2 className="text-sm font-bold mt-4 text-sky-700">What Makes Support App Different?</h2>
+        <p className="text-sm text-gray-600 mt-2 font-semibold">
+          A product of <span className="text-sky-700 text-[12px] ">NEXUSCARE TECH SERVICES PVT. LTD. </span>
         </p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto text-sm">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-xs">
         {/* Feature 1 */}
         <div className="bg-white rounded-xl shadow-md p-6 text-center ">
-          <div className="text-blue-500 text-3xl mb-4">📚</div>
+        <div class="featured-img mb-3 w-[50px] mx-auto">
+                <img class="avatar-sm"
+                  src="https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Flayers.png?alt=media&token=86995e36-17d3-46b4-95b7-7bfedd151367"
+                  alt="" />
+              </div>
           <h3 className="font-bold text-lg text-sky-700">Anonymous</h3>
           <p className="text-gray-600 mt-2">
             The Support App is 100% anonymous for users. Experts can never know who they are talking to on the Support App.
@@ -176,7 +174,11 @@ const App = () => {
 
         {/* Feature 2 */}
         <div className="bg-white rounded-xl shadow-md shadow-sky-300 p-6 text-center">
-          <div className="text-red-500 text-3xl mb-4">💬</div>
+        <div class="featured-img mb-3 w-[50px] mx-auto">
+        <img class="avatar-sm"
+                  src="https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Fspeak.png?alt=media&token=69eea055-5d06-476e-90dc-bc209229ee01"
+                  alt="" />
+        </div>
           <h3 className="font-bold text-lg text-sky-700">Live Session</h3>
           <p className="text-gray-600 mt-2">
             Support App is an emotional wellness platform where you can freely talk to experts about your feelings in private over chat, call, or video sessions.
@@ -185,7 +187,11 @@ const App = () => {
 
         {/* Feature 3 */}
         <div className="bg-white rounded-xl shadow-md p-6 text-center">
-          <div className="text-purple-500 text-3xl mb-4">🔒</div>
+        <div class="featured-img mb-3 w-[50px] mx-auto">
+        <img class="avatar-sm"
+                  src="https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Flock.png?alt=media&token=8bea5672-fdd3-4da7-a5af-01e00daec5be"
+                  alt="" />
+        </div>
           <h3 className="font-bold text-lg text-sky-700">100% Privacy</h3>
           <p className="text-gray-600 mt-2">
             Your sensitive information is fully safe and secure, and you can feel comfortable sharing it with listeners.
@@ -198,46 +204,46 @@ const App = () => {
     </div>
 
     <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center">Pricing Details</h2>
-        <p class="text-center text-gray-500 mt-2">Find the Right Option for You</p>
+        <h2 class="text-xl font-bold text-center mt-1">Pricing Details</h2>
+        <p class="text-center text-gray-500 mt-2 text-[12px]">Find the Right Option for You</p>
 
         <div class="grid md:grid-cols-3 gap-6 mt-10">
             
           
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky-700">
                 <h3 class="text-xl font-bold">Chat</h3>
-                <p class="text-gray-700 text-lg font-medium mt-2">₹6 per minute</p>
-                <p class="text-gray-500 mt-4">
+                <p class="text-gray-700 text-lg font-medium mt-2">₹6/min</p>
+                <p class="text-gray-500 mt-4 text-[14px]">
                     Engage in meaningful text conversations with our qualified experts. Whether you need someone to talk to, seek advice, or simply vent, our chat service is available to provide you with the support you need.
                 </p>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
                     Start Chat
                 </button>
             </div>
 
            
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-blue-600 relative">
-                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-3 py-1 text-sm font-bold rounded-md">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky-700 relative">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-700 text-white px-3 py-1 text-sm font-bold rounded-md">
                     Most Popular
                 </span>
                 <h3 class="text-xl font-bold">Audio Call</h3>
-                <p class="text-gray-700 text-lg font-medium mt-2">₹6 per minute</p>
-                <p class="text-gray-500 mt-4">
+                <p class="text-gray-700 text-lg font-medium mt-2">₹6/min</p>
+                <p class="text-gray-500 mt-4 text-[14px]">
                     Connect with our experts through voice calls, allowing for a more personal and interactive experience. Discuss your concerns, share your thoughts, and receive real-time verbal feedback.
                 </p>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
                     Start Call
                 </button>
             </div>
 
            
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-sky">
                 <h3 class="text-xl font-bold">Video Call</h3>
-                <p class="text-gray-700 text-lg font-medium mt-2">₹18 per minute</p>
-                <p class="text-gray-500 mt-4">
+                <p class="text-gray-700 text-lg font-medium mt-2">₹18/min</p>
+                <p class="text-gray-500 mt-4 text-[14px]">
                     For those who prefer face-to-face communication, our video call service offers a more intimate and empathetic way to connect.
                 </p>
-                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
+                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-blue-700">
                     Start Video
                 </button>
             </div>
