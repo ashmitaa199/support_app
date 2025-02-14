@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const services = [
   {
@@ -22,26 +23,60 @@ const services = [
 ];
 
 const Services = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + services.length) % services.length);
+  };
+
   return (
-    <section className="bg-gray-100 py-5">
-      <div className="text-center mb-8">
-        <h2 className="text-[16px] font-bold text-sky-700">Experience Our Services</h2>
-        <p className="text-gray-500 text-[10px]">Platform—Where Your Success Becomes Our Story</p>
+    <section className="bg-gray-100 py-12">
+      <div className="text-center mb-10">
+        <h2 className="text-xl font-bold text-sky-700">Our Services</h2>
+        <p className="text-gray-600 text-xs">Discover how we can help you find real support and comfort.</p>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 grid gap-6 md:grid-cols-3">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-gray-100 text-gray-700 rounded-xl p-6 shadow-xl shadow-[#9ccae5] transform transition duration-300 hover:scale-105"
-          >
-            <div className="flex justify-center mb-4 ">
-              <img src={service.image} alt={service.title} className="w-14 h-14 rounded-full" />
+      <div className="max-w-4xl mx-auto px-8 relative">
+        {/* Desktop View */}
+        <div className="hidden md:grid gap-2">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-lg p-2 flex items-center gap-6">
+              <img src={service.image} alt={service.title} className="w-28 h-28 object-cover rounded-md shadow-md" />
+              <div className="text-left">
+                <h3 className="font-bold text-gray-700">{service.title}</h3>
+                <p className="text-gray-600 text-xs mt-2">{service.description}</p>
+              </div>
             </div>
-            <h3 className="text-lg font-bold text-center text-gray-900">{service.title}</h3>
-            <p className="text-[13px] mt-2 text-center">{service.description}</p>
+          ))}
+        </div>
+
+        {/* Mobile View - Carousel */}
+        <div className="md:hidden relative overflow-hidden">
+          <div className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center">
+            <img src={services[currentIndex].image} alt={services[currentIndex].title} className="w-28 h-28 object-cover rounded-md shadow-md" />
+            <h3 className="font-bold text-gray-700 mt-4">{services[currentIndex].title}</h3>
+            <p className="text-gray-600 text-xs mt-2 text-center">{services[currentIndex].description}</p>
           </div>
-        ))}
+
+          {/* Navigation Arrows */}
+          <button onClick={prevSlide} className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+            <FaChevronLeft className="text-gray-700" />
+          </button>
+          <button onClick={nextSlide} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+            <FaChevronRight className="text-gray-700" />
+          </button>
+        </div>
       </div>
     </section>
   );

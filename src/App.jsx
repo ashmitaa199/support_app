@@ -1,11 +1,18 @@
-import './App.css'
+import './App.css';
 import { useState, useEffect, useRef } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import Services from "./components/Services";
+import AboutUs from "./components/AboutUs";
+import BeAListener from "./components/BeAListener";
+import Experts from "./components/Experts";
 import Blogs from './components/Blogs';
 import Footer from './components/Footer';
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "./assets/logo1.jpg";
-import support from "./assets/support_logo.jpg"
+import support from "./assets/support_logo.jpg";
+import Features from "./components/Features";
+import Pricing from './components/Pricing';
+import FullBlogs from './components/FullBlogs';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,8 +20,8 @@ const App = () => {
   const [rotatingText, setRotatingText] = useState("Story");
   const textOptions = ["Story", "People", "Support"];
   const downloadRef = useRef(null);
+  const mobileDownloadRef = useRef(null);
 
-  // Rotate text
   useEffect(() => {
     const interval = setInterval(() => {
       setRotatingText((prevText) => {
@@ -25,7 +32,6 @@ const App = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Close download dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (downloadRef.current && !downloadRef.current.contains(event.target)) {
@@ -40,44 +46,44 @@ const App = () => {
 
   return (
     <>
-      <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div className=" flex justify-between items-center h-16 px-3">
+      <nav className="bg-white shadow-lg w-full top-0 z-50">
+        <div className="flex justify-between items-center h-16 px-3">
           {/* Logo*/}
-          <div className="flex items-center ">
+          <div className="flex items-center">
             <img src={logo} className="h-16 cursor-pointer" alt="Logo" />
           </div>
 
-          {/* Navigation & Download */}
+          {/* Navigation */}
           <div className="hidden md:flex items-center space-x-6 text-sky-700 font-medium">
-            <a href="#" className="hover:text-blue-500">Home</a>
-            <a href="#" className="hover:text-blue-500">Experts</a>
-            <a href="#" className="hover:text-blue-500">Blog</a>
-            <a href="#" className="hover:text-blue-500">Be a Listener</a>
-            <a href="#" className="hover:text-blue-500">About Us</a>
+            <Link to="/" className="hover:text-blue-500">Home</Link>
+            <Link to="/experts" className="hover:text-blue-500">Experts</Link>
+            <Link to="/all-blogs" className="hover:text-blue-500">Blog</Link>
+            <Link to="/be-a-listener" className="hover:text-blue-500">Be a Listener</Link>
+            <Link to="/about-us" className="hover:text-blue-500">About Us</Link>
+          </div>
 
-            {/* Download Button Dropdown */}
-            <div className="relative" ref={downloadRef}>
-              <button
-                onClick={() => setDownloadOpen(!downloadOpen)}
-                className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
-              >
-                Download Now
-              </button>
+          {/* Download Button Dropdown (Hidden on small screens) */}
+          <div className="relative hidden md:block" ref={downloadRef}>
+            <button
+              onClick={() => setDownloadOpen(!downloadOpen)}
+              className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
+            >
+              Download Now
+            </button>
 
-              {/* Dropdown Options */}
-              {downloadOpen && (
-                <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg ">
-                  <a href="#" className="block">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
-                alt="Google Play" className="w-40" />
-            </a>
-            <a href="#" className="block">
-              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
-                alt="App Store" className="w-40" />
-            </a>
-                </div>
-              )}
-            </div>
+            {/* Dropdown Options */}
+            {downloadOpen && (
+              <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
+                <a href="#" className="block">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+                    alt="Google Play" className="w-40" />
+                </a>
+                <a href="#" className="block">
+                  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                    alt="App Store" className="w-40" />
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,180 +97,69 @@ const App = () => {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden bg-white w-full py-4 flex flex-col items-center space-y-4 text-sky-700 font-semibold">
-            <a href="#" className="hover:text-blue-500">Home</a>
-            <a href="#" className="hover:text-blue-500">Experts</a>
-            <a href="#" className="hover:text-blue-500">Blog</a>
-            <a href="#" className="hover:text-blue-500">Be a Listener</a>
-            <a href="#" className="hover:text-blue-500">About Us</a>
-
-            {/* Mobile Download Dropdown */}
-            <div className="relative" ref={downloadRef}>
-              <button
-                onClick={() => setDownloadOpen(!downloadOpen)}
-                className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
-              >
-                Download Now
-              </button>
-              {downloadOpen && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
-                  
-                  <a href="#" className="block">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
-                alt="Google Play" className="w-40" />
-            </a>
-            <a href="#" className="block">
-              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
-                alt="App Store" className="w-40" />
-            </a>
-               
-                </div>
-              )}
-            </div>
+            <Link to="/" className="hover:text-blue-500">Home</Link>
+            <Link to="/experts" className="hover:text-blue-500">Experts</Link>
+            <Link to="/all-blogs" className="hover:text-blue-500">Blog</Link>
+            <Link to="/be-a-listener" className="hover:text-blue-500">Be a Listener</Link>
+            <Link to="/about-us" className="hover:text-blue-500">About Us</Link>
+            <button
+              onClick={() => setDownloadOpen(!downloadOpen)}
+              className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
+            >
+              Download Now
+            </button>
+            {downloadOpen && (
+              <div className="absolute mt-60 bg-white border border-gray-200 rounded-md shadow-lg text-center">
+                <a href="#" className="block">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+                    alt="Google Play" className="w-40" />
+                </a>
+                <a href="#" className="block">
+                  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                    alt="App Store" className="w-40" />
+                </a>
+              </div>
+            )}
           </div>
         )}
       </nav>
 
-      {/* Hero Section */}
-<section className="h-screen flex flex-col mt-7 md:mt-0 md:flex-row items-center justify-center md:justify-between bg-gradient-to-b from-blue-50 to-[#9ccae5] text-white text-center md:text-left px-6 md:px-16 md:gap-2">
-  {/* Left Side - Text Content */}
-  <div className="w-full md:w-1/2">
-    <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-      Real <span className="text-sky-700">{rotatingText}</span>
-    </h1>
-    <p className="text-sm italic mt-4 text-sky-700">
-      "Supporting Minds, Uplifting Hearts"
-    </p>
-    <p className="mt-6 text-gray-600">
-      "Feeling down? Let’s turn those blues into a brighter hue—reach out and let’s talk.
-      Sometimes, the best support starts with just one conversation."
-    </p>
-  </div>
-
-  {/* Right Side - Image */}
-  <div className="w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0">
-    <img src={support} className="w-2/3 md:w-80 max-w-xs md:max-w-none" alt="Support"/>
-  </div>
-</section>
-
-
-      <section className="py-6 px-6">
-      <div className="text-center">
-        <span className="bg-white px-4 py-1 rounded-full shadow-md text-sky-700 font-semibold">
-          🔆 Features
-        </span>
-        <h2 className="text-sm font-bold mt-4 text-sky-700">What Makes Support App Different?</h2>
-        <p className="text-sm text-gray-600 mt-2 font-semibold">
-          A product of <span className="text-sky-700 text-[12px] ">NEXUSCARE TECH SERVICES PVT. LTD. </span>
-        </p>
-      </div>
-
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-xs">
-        {/* Feature 1 */}
-        <div className="bg-white rounded-xl shadow-md p-6 text-center ">
-        <div class="featured-img mb-3 w-[50px] mx-auto">
-                <img class="avatar-sm"
-                  src="https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Flayers.png?alt=media&token=86995e36-17d3-46b4-95b7-7bfedd151367"
-                  alt="" />
+      {/* Define Routes Here */}
+      <Routes>
+        <Route path="/" element={
+          <>
+            <section className="h-screen flex flex-col md:mt-0 md:flex-row items-center justify-center md:justify-between bg-gradient-to-b from-blue-50 to-[#9ccae5] text-white text-center md:text-left px-6 md:px-16 md:gap-2">
+              <div className="w-full md:w-1/2 md:-mt-36">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+                  Real <span className="text-sky-700">{rotatingText}</span>
+                </h1>
+                <p className="text-sm italic mt-4 text-sky-700">
+                  "Supporting Minds, Uplifting Hearts"
+                </p>
+                <p className="mt-6 text-gray-600">
+                  "Feeling down? Let’s turn those blues into a brighter hue—reach out and let’s talk.
+                  Sometimes, the best support starts with just one conversation."
+                </p>
               </div>
-          <h3 className="font-bold text-lg text-sky-700">Anonymous</h3>
-          <p className="text-gray-600 mt-2">
-            The Support App is 100% anonymous for users. Experts can never know who they are talking to on the Support App.
-          </p>
-        </div>
-
-        {/* Feature 2 */}
-        <div className="bg-white rounded-xl shadow-md p-6 text-center">
-        <div class="featured-img mb-3 w-[50px] mx-auto">
-        <img class="avatar-sm"
-                  src="https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Fspeak.png?alt=media&token=69eea055-5d06-476e-90dc-bc209229ee01"
-                  alt="" />
-        </div>
-          <h3 className="font-bold text-lg text-sky-700">Live Session</h3>
-          <p className="text-gray-600 mt-2">
-            Support App is an emotional wellness platform where you can freely talk to experts about your feelings in private over chat, call, or video sessions.
-          </p>
-        </div>
-
-        {/* Feature 3 */}
-        <div className="bg-white rounded-xl shadow-md p-6 text-center">
-        <div class="featured-img mb-3 w-[50px] mx-auto">
-        <img class="avatar-sm"
-                  src="https://firebasestorage.googleapis.com/v0/b/support-stress-free.appspot.com/o/SupportWebImages%2FIcons%2Flock.png?alt=media&token=8bea5672-fdd3-4da7-a5af-01e00daec5be"
-                  alt="" />
-        </div>
-          <h3 className="font-bold text-lg text-sky-700">100% Privacy</h3>
-          <p className="text-gray-600 mt-2">
-            Your sensitive information is fully safe and secure, and you can feel comfortable sharing it with listeners.
-          </p>
-        </div>
-      </div>
-    </section>
-    <div>
-      <Services/>
-    </div>
-
-    <div class="container mx-auto px-6 mt-5">
-        <h2 class="text-2xl font-bold text-center mt-3 text-sky-700">Pricing Details</h2>
-        <hr
-  class="my-1 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
-        <p class="text-center text-gray-500 mt-1 text-[10px]">Find the Right Option for You</p>
-
-        <div class="grid md:grid-cols-3 gap-6 mt-10">
-            
-          
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-[1.5px] border-sky-700">
-                <h3 class="text-xl font-bold">Chat</h3>
-                <p class="text-gray-700 text-lg font-medium mt-2">₹6/min</p>
-                <p class="text-gray-500 mt-4 text-[14px]">
-                    Engage in meaningful text conversations with our qualified experts. Whether you need someone to talk to, seek advice, or simply vent, our chat service is available to provide you with the support you need.
-                </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-6 hover:bg-[#82b5d4]">
-                    Start Chat
-                </button>
-            </div>
-
-           
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-[1.5px] border-sky-700 relative">
-                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-700 text-white px-3 py-1 text-sm font-bold rounded-md">
-                    Most Popular
-                </span>
-                <h3 class="text-xl font-bold">Audio Call</h3>
-                <p class="text-gray-700 text-lg font-medium mt-2">₹6/min</p>
-                <p class="text-gray-500 mt-4 text-[14px] ">
-                    Connect with our experts through voice calls, allowing for a more personal and interactive experience. Discuss your concerns, share your thoughts, and receive real-time verbal feedback.
-                </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-12 hover:bg-[#82b5d4]">
-                    Start Call
-                </button>
-            </div>
-
-           
-            <div class="bg-white p-6 rounded-xl shadow-lg text-center border-[1.5px] border-sky-700">
-                <h3 class="text-xl font-bold">Video Call</h3>
-                <p class="text-gray-700 text-lg font-medium mt-2">₹18/min</p>
-                <p class="text-gray-500 mt-4 text-[14px]">
-                    For those who prefer face-to-face communication, our video call service offers a more intimate and empathetic way to connect.
-                </p>
-                <button class="bg-sky-700 text-white px-6 py-2 rounded-lg mt-16 hover:bg-[#82b5d4]">
-                    Start Video
-                </button>
-            </div>
-
-        </div>
-    </div>
-    <div>
-      <Blogs/>
-    </div>
-
-    <div>
-      <Footer/>
-    </div>
-  
-
+              <div className="w-full md:w-1/2 md:-mt-28 flex justify-center md:justify-end mt-10">
+                <img src={support} className="w-2/3 md:w-80 max-w-xs md:max-w-none" alt="Support"/>
+              </div>
+            </section>
+            <Features />
+            <Services />
+            <Pricing />
+            <Blogs />
+            <Footer />
+          </>
+        } />
+        <Route path="/experts" element={<Experts />} />
+        <Route path="/all-blogs" element={<FullBlogs />} />
+        <Route path="/be-a-listener" element={<BeAListener />}/>
+        <Route path="/about-us" element={<AboutUs />} />
+      </Routes>
+      
     </>
   );
 };
 
 export default App;
-
-
