@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const blogs = [
   {
@@ -6,6 +7,7 @@ const blogs = [
     title: "Parenting",
     description:
       "Parenthood, undoubtedly one of life’s most rewarding journeys, comes with its fair share of challenges.",
+    content: "This is the full blog content about parenting. Here you can describe parenting challenges and solutions...",
     image: "https://via.placeholder.com/400x200",
     overlayText: "The Creative Adult is The Child Who Survived",
   },
@@ -14,40 +16,9 @@ const blogs = [
     title: "Loneliness",
     description:
       "Unlocking Clarity and Connection: Navigating Loneliness with the help of Support App.",
+    content: "This is the full blog content about loneliness. It explains how loneliness affects mental health...",
     image: "https://via.placeholder.com/400x200",
     overlayText: "Feeling Isolated, Lonely?",
-  },
-  {
-    id: 3,
-    title: "How to remove shyness in talking with Girls",
-    description:
-      "Unveiling Confidence: How the Support App Breaks the Shyness Barrier, Empowering Connections...",
-    image: "https://via.placeholder.com/400x200",
-    overlayText: "Try Support App Now",
-  },
-  {
-    id: 4,
-    title: "How to overcome rejection",
-    description:
-      "Navigating Rejections in Love and Life: Your Guide to Clarity of mind and Emotional Support.",
-    image: "https://via.placeholder.com/400x200",
-    overlayText: "Let's reject rejection.",
-  },
-  {
-    id: 5,
-    title: "How to overcome Financial crisis",
-    description:
-      "Navigating Financial Crisis with Support App: Clarity Live Video Calls, and Connection for a Brighter Future.",
-    image: "https://via.placeholder.com/400x200",
-    overlayText: "Support Helps Financial Crisis",
-  },
-  {
-    id: 6,
-    title: "Social Injustice",
-    description:
-      "In a world grappling with social injustice, the fight for equality requires more than just awareness.",
-    image: "https://via.placeholder.com/400x200",
-    overlayText: "Empowerment and Change",
   },
 ];
 
@@ -67,12 +38,12 @@ const BlogCard = ({ blog }) => {
       <div className="p-4">
         <h3 className="text-lg font-bold">{blog.title}</h3>
         <p className="text-gray-600 mt-2">{blog.description}</p>
-        <a
-          href="#"
+        <Link
+          to={`/blog/${blog.id}`}
           className="mt-4 inline-block text-blue-600 font-semibold hover:underline"
         >
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   );

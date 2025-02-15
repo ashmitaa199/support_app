@@ -13,6 +13,7 @@ import support from "./assets/support_logo.jpg";
 import Features from "./components/Features";
 import Pricing from './components/Pricing';
 import FullBlogs from './components/FullBlogs';
+import BlogDetails from './components/BlogDetails';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -156,6 +157,8 @@ const App = () => {
         <Route path="/all-blogs" element={<FullBlogs />} />
         <Route path="/be-a-listener" element={<BeAListener />}/>
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/" element={<FullBlogs />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
       
     </>
