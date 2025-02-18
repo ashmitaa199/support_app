@@ -14,6 +14,7 @@ import Features from "./components/Features";
 import Pricing from './components/Pricing';
 import FullBlogs from './components/FullBlogs';
 import BlogDetails from './components/BlogDetails';
+import ph from './assets/ph.png'
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ const App = () => {
   const [rotatingText, setRotatingText] = useState("Story");
   const textOptions = ["Story", "People", "Support"];
   const downloadRef = useRef(null);
-  const mobileDownloadRef = useRef(null);
+  // const mobileDownloadRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,121 +48,135 @@ const App = () => {
 
   return (
     <>
-      <nav className="bg-white shadow-lg w-full top-0 z-50">
-        <div className="flex justify-between items-center h-16 px-3">
-          {/* Logo*/}
-          <div className="flex items-center">
-            <img src={logo} className="h-16 cursor-pointer" alt="Logo" />
-          </div>
+    <Routes>
+    <Route path="/" element={
+      <>
+      <div className='bg-[#006bc5] '>
+      <div className=''>
+      <nav className="shadow-lg shadow-white w-full top-0 z-50 bg-white">
+  <div className="flex justify-between items-center h-16 px-6">
+    
+    {/* Logo on the Left */}
+    <div className="flex items-center">
+      <img src={logo} className="h-16 cursor-pointer" alt="Logo" />
+    </div>
 
-          {/* Navigation */}
-          <div className="hidden md:flex items-center space-x-6 text-sky-700 font-medium">
-            <Link to="/" className="hover:text-blue-500">Home</Link>
-            <Link to="/experts" className="hover:text-blue-500">Experts</Link>
-            <Link to="/all-blogs" className="hover:text-blue-500">Blog</Link>
-            <Link to="/be-a-listener" className="hover:text-blue-500">Be a Listener</Link>
-            <Link to="/about-us" className="hover:text-blue-500">About Us</Link>
-          </div>
+    {/* Navigation + Download Button on the Right */}
+    <div className="flex items-center space-x-6">
+      {/* Navigation Links */}
+      <div className="hidden md:flex items-center space-x-6 text-sky-700 font-medium">
+        <Link to="/" className="hover:text-blue-500">Home</Link>
+        <Link to="/experts" className="hover:text-blue-500">Experts</Link>
+        <Link to="/all-blogs" className="hover:text-blue-500">Blog</Link>
+        <Link to="/be-a-listener" className="hover:text-blue-500">Be a Listener</Link>
+        <Link to="/about-us" className="hover:text-blue-500">About Us</Link>
+      </div>
 
-          {/* Download Button Dropdown (Hidden on small screens) */}
-          <div className="relative hidden md:block" ref={downloadRef}>
-            <button
-              onClick={() => setDownloadOpen(!downloadOpen)}
-              className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
-            >
-              Download Now
-            </button>
+      {/* Download Button Dropdown */}
+      <div className="relative hidden md:block" ref={downloadRef}>
+        <button
+          onClick={() => setDownloadOpen(!downloadOpen)}
+          className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
+        >
+          Download Now
+        </button>
 
-            {/* Dropdown Options */}
-            {downloadOpen && (
-              <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
-                <a href="#" className="block">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
-                    alt="Google Play" className="w-40" />
-                </a>
-                <a href="#" className="block">
-                  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
-                    alt="App Store" className="w-40" />
-                </a>
-              </div>
-            )}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)} className="text-sky-700">
-              {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden bg-white w-full py-4 flex flex-col items-center space-y-4 text-sky-700 font-semibold">
-            <Link to="/" className="hover:text-blue-500">Home</Link>
-            <Link to="/experts" className="hover:text-blue-500">Experts</Link>
-            <Link to="/all-blogs" className="hover:text-blue-500">Blog</Link>
-            <Link to="/be-a-listener" className="hover:text-blue-500">Be a Listener</Link>
-            <Link to="/about-us" className="hover:text-blue-500">About Us</Link>
-            <button
-              onClick={() => setDownloadOpen(!downloadOpen)}
-              className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
-            >
-              Download Now
-            </button>
-            {downloadOpen && (
-              <div className="absolute mt-60 bg-white border border-gray-200 rounded-md shadow-lg text-center">
-                <a href="#" className="block">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
-                    alt="Google Play" className="w-40" />
-                </a>
-                <a href="#" className="block">
-                  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
-                    alt="App Store" className="w-40" />
-                </a>
-              </div>
-            )}
+        {/* Dropdown Options */}
+        {downloadOpen && (
+          <div className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg">
+            <a href="#" className="block">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+                alt="Google Play" className="w-40" />
+            </a>
+            <a href="#" className="block">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                alt="App Store" className="w-40" />
+            </a>
           </div>
         )}
-      </nav>
+      </div>
 
-      {/* Define Routes Here */}
-      <Routes>
-        <Route path="/" element={
-          <>
-            <section className="h-screen flex flex-col md:mt-0 md:flex-row items-center justify-center md:justify-between bg-gradient-to-b from-blue-50 to-[#9ccae5] text-white text-center md:text-left px-6 md:px-16 md:gap-2">
-              <div className="w-full md:w-1/2 md:-mt-36">
-                <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-                  Real <span className="text-sky-700">{rotatingText}</span>
-                </h1>
-                <p className="text-sm italic mt-4 text-sky-700">
-                  "Supporting Minds, Uplifting Hearts"
-                </p>
-                <p className="mt-6 text-gray-600">
-                  "Feeling down? Let’s turn those blues into a brighter hue—reach out and let’s talk.
-                  Sometimes, the best support starts with just one conversation."
-                </p>
-              </div>
-              <div className="w-full md:w-1/2 md:-mt-28 flex justify-center md:justify-end mt-10">
-                <img src={support} className="w-2/3 md:w-80 max-w-xs md:max-w-none" alt="Support"/>
-              </div>
-            </section>
-            <Features />
-            <Services />
-            <Pricing />
-            <Blogs />
-            <Footer />
-          </>
-        } />
-        <Route path="/experts" element={<Experts />} />
-        <Route path="/all-blogs" element={<FullBlogs />} />
-        <Route path="/be-a-listener" element={<BeAListener />}/>
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/" element={<FullBlogs />} />
-        <Route path="/blog/:id" element={<BlogDetails />} />
-      </Routes>
+      {/* Mobile Menu Button */}
+      <div className="md:hidden">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="text-sky-700">
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* Mobile Menu */}
+  {menuOpen && (
+    <div className="md:hidden bg-white w-full py-4 flex flex-col items-center space-y-4 text-sky-700 font-semibold">
+      <Link to="/" className="hover:text-blue-500">Home</Link>
+      <Link to="/experts" className="hover:text-blue-500">Experts</Link>
+      <Link to="/all-blogs" className="hover:text-blue-500">Blog</Link>
+      <Link to="/be-a-listener" className="hover:text-blue-500">Be a Listener</Link>
+      <Link to="/about-us" className="hover:text-blue-500">About Us</Link>
+      <button
+        onClick={() => setDownloadOpen(!downloadOpen)}
+        className="border-[1.5px] px-4 py-1 rounded-md border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white"
+      >
+        Download Now
+      </button>
+      {downloadOpen && (
+        <div className="absolute mt-60 bg-white border border-gray-200 rounded-md shadow-lg text-center">
+          <a href="#" className="block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+              alt="Google Play" className="w-40" />
+          </a>
+          <a href="#" className="block">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+              alt="App Store" className="w-40" />
+          </a>
+        </div>
+      )}
+    </div>
+  )}
+</nav>
+
+
+   
       
-    </>
+      
+    </div>
+      {/* hero section */}
+
+        <section className="h-[85vh] flex flex-col md:mt-0 md:flex-row items-center justify-center md:justify-between text-white text-center md:text-left px-6 md:px-16 md:gap-2">
+          <div className="w-full md:w-1/2 md:-mt-36">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+              Real <span className="text-white">{rotatingText}</span>
+            </h1>
+            <p className="text-sm italic mt-4 text-white">
+              "Supporting Minds, Uplifting Hearts"
+            </p>
+            <p className="mt-6 text-white">
+              "Feeling down? Let’s turn those blues into a brighter hue—reach out and let’s talk.
+              Sometimes, the best support starts with just one conversation."
+            </p>
+          </div>
+          <div className="w-full md:w-1/2 md:-mt-28 flex justify-center md:justify-end mt-10">
+            <img src={ph} className="w-2/3 md:w-80 max-w-xs md:max-w-none" alt="Support"/>
+          </div>
+        </section>
+        
+      </div>
+      <Features />
+      <Services />
+      <Pricing />
+      <Blogs />
+      <Footer />
+      
+        </>
+    } />
+    <Route path="/experts" element={<Experts />} />
+    <Route path="/all-blogs" element={<FullBlogs />} />
+    <Route path="/be-a-listener" element={<BeAListener />}/>
+    <Route path="/about-us" element={<AboutUs />} />
+    <Route path="/" element={<FullBlogs />} />
+    <Route path="/blog/:id" element={<BlogDetails />} />
+  </Routes>
+  </>
   );
 };
 
